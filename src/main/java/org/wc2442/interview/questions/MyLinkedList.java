@@ -34,4 +34,18 @@ public class MyLinkedList {
 		return reversed;
 	}
 	
+	public static MyLinkedList reverse2(MyLinkedList head) {
+		if(head != null) {	
+			MyLinkedList prev = null;
+			while(head.next != null) {
+				MyLinkedList next = head.next;
+				head.next = prev;
+				prev = head;
+				head = next;
+			}
+			head.next = prev;
+		}
+		return head;
+	}
+	
 }
